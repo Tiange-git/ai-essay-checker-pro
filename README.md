@@ -277,8 +277,8 @@ MIT License
 ## 联系方式
 
 如有问题，请通过以下方式联系：
-- Email: contact@example.com
-- GitHub: https://github.com/yourusername/ai-essay-checker-pro
+- Email: 3168956195@qq.com
+- GitHub: https://github.com/Tiange-git/ai-essay-checker-pro
 
 ---
 
