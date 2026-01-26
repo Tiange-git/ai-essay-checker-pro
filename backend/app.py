@@ -36,7 +36,7 @@ app.register_blueprint(essay_routes, url_prefix='/api')
 # 健康检查接口
 @app.route('/health', methods=['GET'])
 def health_check():
-    return jsonify({'status': 'ok', 'message': '服务运行正常'}), 200
+    return 'OK', 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
