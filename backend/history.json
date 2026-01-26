@@ -1,0 +1,921 @@
+[
+  {
+    "id": 1,
+    "content": "This is a test essay for history feature. I am testing the new history functionality.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"This is a test essay for history feature.\",\n    \"corrected\": \"This is a test essay about historical features.\",\n    \"error_type\": \"Article/Preposition Usage\",\n    \"explanation\": \"The phrase 'for history feature' is unclear. 'For' should be replaced with 'about' to indicate the topic. Additionally, 'history' (noun) should become 'historical' (adjective) to properly modify 'features'. The singular 'feature' should also be pluralized to match the context of testing multiple functionalities.\"\n  },\n  {\n    \"original\": \"I am testing the new history functionality.\",\n    \"corrected\": \"I am testing its new historical functionality.\",\n    \"error_type\": \"Pronoun Agreement & Adjective Form\",\n    \"explanation\": \"The pronoun 'its' replaces the ambiguous 'the new' and refers back to 'essay'. 'History' (noun) must become 'historical' (adjective) to correctly describe 'functionality'. The original phrasing created a noun stacking error where 'history' was incorrectly used as an adjective.\"\n  }\n]\n```\n\n修改后的完整文本：\nThis is a test essay about historical features. I am testing its new historical functionality.\n\n评分：78/100\n改进建议：\n1. 增强内容深度 - 当前文本过于简略，建议添加具体历史功能测试案例（如时间轴工具、档案检索等）\n2. 优化句式结构 - 可合并两个简单句为复合句：\"As this test essay focuses on historical features, I'm evaluating their new historical functionality\"\n3. 注意学科术语 - 在正式学术写作中，\"functionality\"可替换为更专业的\"archival tools\"或\"historiographical instruments\"\n4. 增加过渡衔接 - 使用连接词如\"specifically\"或\"particularly\"来明确句子关系\n5. 保持形容词一致性 - 统一使用\"historical\"修饰相关名词，避免名词直接作定语的非标准用法",
+      "suggestions": [
+        "1. 增强内容深度 - 当前文本过于简略，建议添加具体历史功能测试案例（如时间轴工具、档案检索等）",
+        "2. 优化句式结构 - 可合并两个简单句为复合句：\"As this test essay focuses on historical features, I'm evaluating their new historical functionality\"",
+        "3. 注意学科术语 - 在正式学术写作中，\"functionality\"可替换为更专业的\"archival tools\"或\"historiographical instruments\""
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "This is a test essay for history feature.",
+          "corrected": "This is a test essay about historical features.",
+          "error_type": "Article/Preposition Usage",
+          "explanation": "The phrase 'for history feature' is unclear. 'For' should be replaced with 'about' to indicate the topic. Additionally, 'history' (noun) should become 'historical' (adjective) to properly modify 'features'. The singular 'feature' should also be pluralized to match the context of testing multiple functionalities."
+        },
+        {
+          "original": "I am testing the new history functionality.",
+          "corrected": "I am testing its new historical functionality.",
+          "error_type": "Pronoun Agreement & Adjective Form",
+          "explanation": "The pronoun 'its' replaces the ambiguous 'the new' and refers back to 'essay'. 'History' (noun) must become 'historical' (adjective) to correctly describe 'functionality'. The original phrasing created a noun stacking error where 'history' was incorrectly used as an adjective."
+        }
+      ],
+      "corrected_text": "This is a test essay about historical features. I am testing its new historical functionality."
+    },
+    "type": "text",
+    "created_at": "2026-01-24 15:32:30"
+  },
+  {
+    "id": 2,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n{\n  \"errors\": [\n    {\n      \"original\": \"I'm looking forward for your reply.\",\n      \"corrected\": \"I'm looking forward to your reply.\",\n      \"error_type\": \"Preposition Error\",\n      \"explanation\": \"The correct preposition after 'look forward' is 'to', not 'for'. The phrase should be 'look forward to something'.\"\n    },\n    {\n      \"original\": \"She is capable to do the job.\",\n      \"corrected\": \"She is capable of doing the job.\",\n      \"error_type\": \"Adjective Preposition Error\",\n      \"explanation\": \"The adjective 'capable' requires the preposition 'of' followed by a gerund. Correct structure: 'capable of doing'.\"\n    },\n    {\n      \"original\": \"He is interested for learning English.\",\n      \"corrected\": \"He is interested in learning English.\",\n      \"error_type\": \"Adjective Preposition Error\",\n      \"explanation\": \"The adjective 'interested' requires the preposition 'in'. Correct structure: 'interested in something'.\"\n    },\n    {\n      \"original\": \"We are familiar to this area.\",\n      \"corrected\": \"We are familiar with this area.\",\n      \"error_type\": \"Adjective Preposition Error\",\n      \"explanation\": \"The adjective 'familiar' requires the preposition 'with' when referring to knowledge of something. 'Familiar to' is used when something is known to someone (e.g., 'This song is familiar to me').\"\n    },\n    {\n      \"original\": \"If I will have time, I will visit you.\",\n      \"corrected\": \"If I have time, I will visit you.\",\n      \"error_type\": \"Conditional Tense Error\",\n      \"explanation\": \"In first conditional sentences, the if-clause uses present simple tense, not future. Structure: 'If + present simple, will + base verb'.\"\n    },\n    {\n      \"original\": \"If I was you, I would accept the offer.\",\n      \"corrected\": \"If I were you, I would accept the offer.\",\n      \"error_type\": \"Subjunctive Mood Error\",\n      \"explanation\": \"Second conditional sentences require the subjunctive mood 'were' for all subjects in the if-clause, not 'was'. Structure: 'If + past simple (subjunctive), would + base verb'.\"\n    },\n    {\n      \"original\": \"If it rains tomorrow, we would stay at home.\",\n      \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n      \"error_type\": \"Conditional Consistency Error\",\n      \"explanation\": \"First conditional sentences require 'will' in the main clause, not 'would'. 'Would' is used in second conditionals for hypothetical situations. Since 'rains' is present simple, this is a first conditional.\"\n    },\n    {\n      \"original\": \"Unless you don't hurry, you will miss the train.\",\n      \"corrected\": \"Unless you hurry, you will miss the train.\",\n      \"error_type\": \"Double Negative Error\",\n      \"explanation\": \"'Unless' already implies negation, so using 'don't' creates a double negative. Remove 'not' after 'unless'. Alternatively: 'If you don't hurry, you will miss the train.'\"\n    }\n  ],\n  \"corrected_text\": \"I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area.\\nIf I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\",\n  \"score\": 6.5/10,\n  \"improvement_suggestions\": [\n    \"Review preposition usage with adjectives (e.g., capable of, interested in, familiar with)\",\n    \"Study conditional sentence structures (first vs. second conditional)\",\n    \"Practice subjunctive mood usage in hypothetical situations\",\n    \"Be cautious of double negatives with words like 'unless'\",\n    \"Memorize common verb-preposition collocations\"\n  ]\n}\n```",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [],
+      "corrected_text": ""
+    },
+    "type": "word",
+    "created_at": "2026-01-24 15:39:17"
+  },
+  {
+    "id": 3,
+    "content": "This is a test essay with some grammar errors. I goes to school everyday.",
+    "result": {
+      "feedback": "```json\n{\n  \"errors\": [\n    {\n      \"original\": \"I goes to school everyday.\",\n      \"corrected\": \"I go to school every day.\",\n      \"error_type\": \"主谓一致错误 & 拼写/标点错误\",\n      \"explanation\": \"1. 主语'I'是第一人称单数，动词应使用原形'go'而非第三人称单数形式'goes'。\\n2. 'everyday'是形容词（意为'日常的'），此处需要副词短语'every day'（每天）作时间状语。\"\n    }\n  ],\n  \"corrected_text\": \"This is a test essay with some grammar errors. I go to school every day.\",\n  \"score\": 6/10,\n  \"improvement_suggestions\": [\n    \"1. 加强主谓一致练习，特别注意第一人称代词后的动词形式\\n2. 区分易混淆词汇：everyday（形容词） vs every day（副词短语）\\n3. 增加复杂句式练习，如使用复合句（e.g. Although this is a test essay, it contains intentional errors.）\\n4. 注意写作内容的逻辑连贯性，当前两句话缺乏逻辑衔接\"\n  ]\n}\n```",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [],
+      "corrected_text": ""
+    },
+    "type": "text",
+    "created_at": "2026-01-24 15:43:39"
+  },
+  {
+    "id": 4,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "以下是对英语作文的详细批改及分析：\n\n```json\n{\n  \"errors\": [\n    {\n      \"original\": \"I'm looking forward for your reply.\",\n      \"corrected\": \"I'm looking forward to your reply.\",\n      \"error_type\": \"介词误用\",\n      \"explanation\": \"固定搭配'look forward to'中的'to'是介词，后接名词或动名词，不能用'for'\"\n    },\n    {\n      \"original\": \"She is capable to do the job.\",\n      \"corrected\": \"She is capable of doing the job.\",\n      \"error_type\": \"形容词搭配错误\",\n      \"explanation\": \"capable的正确搭配是'capable of + 动名词'，而非不定式\"\n    },\n    {\n      \"original\": \"He is interested for learning English.\",\n      \"corrected\": \"He is interested in learning English.\",\n      \"error_type\": \"介词误用\",\n      \"explanation\": \"interested的正确介词搭配是'in'，表示对某事物的兴趣\"\n    },\n    {\n      \"original\": \"We are familiar to this area.\",\n      \"corrected\": \"We are familiar with this area.\",\n      \"error_type\": \"形容词搭配错误\",\n      \"explanation\": \"familiar的主语是人时，应使用'familiar with'表示熟悉某事物\"\n    },\n    {\n      \"original\": \"If I will have time, I will visit you.\",\n      \"corrected\": \"If I have time, I will visit you.\",\n      \"error_type\": \"条件句语法错误\",\n      \"explanation\": \"第一条件句中，if从句需用一般现在时，主句用将来时，不能在if从句中使用'will'\"\n    },\n    {\n      \"original\": \"If I was you, I would accept the offer.\",\n      \"corrected\": \"If I were you, I would accept the offer.\",\n      \"error_type\": \"虚拟语气错误\",\n      \"explanation\": \"第二条件句中，be动词的虚拟形式应用'were'，无论主语是单复数\"\n    },\n    {\n      \"original\": \"If it rains tomorrow, we would stay at home.\",\n      \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n      \"error_type\": \"时态不一致\",\n      \"explanation\": \"真实条件句中，if从句用一般现在时，主句应使用'will'而不是'would'\"\n    },\n    {\n      \"original\": \"Unless you don't hurry, you will miss the train.\",\n      \"corrected\": \"Unless you hurry, you will miss the train.\",\n      \"error_type\": \"双重否定错误\",\n      \"explanation\": \"unless本身已含否定意义，不能再与'don't'连用，会造成逻辑矛盾\"\n    }\n  ],\n  \"modified_text\": \"I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\",\n  \"score\": 65,\n  \"improvement_suggestions\": [\n    \"1. 加强固定搭配记忆：特别注意形容词与介词的搭配（如capable of, interested in）\",\n    \"2. 巩固条件句结构：区分真实条件句（if+现在时，will+将来时）和虚拟条件句（if+过去时，would+完成时）\",\n    \"3. 注意否定表达：避免在unless等否定词后重复使用否定\",\n    \"4. 增加句式多样性：尝试使用复合句和复杂句式提升文章连贯性\"\n  ]\n}\n```\n\n修改后的完整文本：\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n评分说明：\n- 总分65分（满分100）\n- 主要扣分点集中在语法准确性（4处严重错误）、搭配正确性（3处错误）和逻辑表达（1处双重否定）\n- 句子结构相对简单，缺乏复杂度，建议通过阅读地道范文提升句式多样性",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "介词误用",
+          "explanation": "固定搭配'look forward to'中的'to'是介词，后接名词或动名词，不能用'for'"
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "形容词搭配错误",
+          "explanation": "capable的正确搭配是'capable of + 动名词'，而非不定式"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "介词误用",
+          "explanation": "interested的正确介词搭配是'in'，表示对某事物的兴趣"
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "形容词搭配错误",
+          "explanation": "familiar的主语是人时，应使用'familiar with'表示熟悉某事物"
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "条件句语法错误",
+          "explanation": "第一条件句中，if从句需用一般现在时，主句用将来时，不能在if从句中使用'will'"
+        }
+      ],
+      "corrected_text": "I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train."
+    },
+    "type": "text",
+    "created_at": "2026-01-24 15:47:01"
+  },
+  {
+    "id": 5,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n{\n  \"errors\": [\n    {\n      \"original\": \"I'm looking forward for your reply.\",\n      \"corrected\": \"I'm looking forward to your reply.\",\n      \"error_type\": \"介词错误\",\n      \"explanation\": \"固定搭配错误。'look forward to' 是正确搭配，其中to是介词，后接名词或动名词。\"\n    },\n    {\n      \"original\": \"She is capable to do the job.\",\n      \"corrected\": \"She is capable of doing the job.\",\n      \"error_type\": \"形容词搭配错误\",\n      \"explanation\": \"形容词capable需与介词of连用，构成'be capable of (doing) something'结构。\"\n    },\n    {\n      \"original\": \"He is interested for learning English.\",\n      \"corrected\": \"He is interested in learning English.\",\n      \"error_type\": \"介词错误\",\n      \"explanation\": \"形容词interested需与介词in连用，表示对某事的兴趣。\"\n    },\n    {\n      \"original\": \"We are familiar to this area.\",\n      \"corrected\": \"We are familiar with this area.\",\n      \"error_type\": \"形容词搭配错误\",\n      \"explanation\": \"主语为人时，familiar应与with连用；若使用to则主语应为事物（如：This area is familiar to us）。\"\n    },\n    {\n      \"original\": \"If I will have time, I will visit you.\",\n      \"corrected\": \"If I have time, I will visit you.\",\n      \"error_type\": \"条件句语法错误\",\n      \"explanation\": \"第一条件句中，if从句需用一般现在时表将来，主句用将来时。'will'在if从句中多余。\"\n    },\n    {\n      \"original\": \"If I was you, I would accept the offer.\",\n      \"corrected\": \"If I were you, I would accept the offer.\",\n      \"error_type\": \"虚拟语气错误\",\n      \"explanation\": \"第二条件句的虚拟语气需用过去式，be动词统一用were，无论主语人称。\"\n    },\n    {\n      \"original\": \"If it rains tomorrow, we would stay at home.\",\n      \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n      \"error_type\": \"时态不一致\",\n      \"explanation\": \"第一条件句中，从句用一般现在时，主句应用'will'表真实可能发生的情况。\"\n    },\n    {\n      \"original\": \"Unless you don't hurry, you will miss the train.\",\n      \"corrected\": \"Unless you hurry, you will miss the train.\",\n      \"error_type\": \"双重否定错误\",\n      \"explanation\": \"unless本身已含否定意义（=if...not），再加don't导致逻辑矛盾。\"\n    }\n  ],\n  \"modified_text\": \"I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\",\n  \"score\": 6.5/10,\n  \"improvement_suggestions\": [\n    \"1. 加强固定搭配记忆：重点掌握形容词+介词组合（capable of, interested in, familiar with）\",\n    \"2. 区分条件句类型：第一条件句（真实可能）用现在时+will；第二条件句（虚拟）用过去时+would\",\n    \"3. 注意否定词位置：避免unless与not重复使用造成语义混乱\",\n    \"4. 练习虚拟语气：特别关注be动词在任何人称下均用were的特殊用法\"\n  ]\n}\n```",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [],
+      "corrected_text": ""
+    },
+    "type": "word",
+    "created_at": "2026-01-24 16:32:23"
+  },
+  {
+    "id": 6,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"固定搭配错误。'look forward to'是固定短语，其中'to'是介词，后接名词或动名词。\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"形容词'capable'需与介词'of'搭配，后接动名词形式。正确结构为'be capable of doing something'。\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"形容词'interested'应与介词'in'搭配。正确结构为'be interested in (doing) something'。\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"当主语是人时，'familiar'应与介词'with'搭配。'Familiar to'用于事物作主语的情况（如：The song is familiar to me）。\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"条件句时态错误\",\n    \"explanation\": \"第一条件句中，if从句用一般现在时表将来，主句用将来时。不可在if从句中使用'will'。\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"虚拟语气错误\",\n    \"explanation\": \"第二条件句表示与现在事实相反的假设，be动词统一使用'were'，无论主语是什么。\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"条件句时态不一致\",\n    \"explanation\": \"第一条件句的主句应使用'will'，而非'would'。'would'仅用于第二、第三条件句。\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"双重否定逻辑错误\",\n    \"explanation\": \"'Unless'本身已含否定意义（= if...not），不能再与'don't'连用，会造成双重否定。\"\n  }\n]\n```\n\n修改后的完整文本：\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n评分：6.5/10\n改进建议：\n1. 重点强化以下语法点：\n   - 形容词与介词的固定搭配（capable of, interested in, familiar with）\n   - 条件句的三种类型及时态对应关系\n   - unless等否定连词的使用规则\n2. 建议建立错题本记录常见搭配错误，通过造句练习巩固记忆\n3. 写作时注意句子间的逻辑衔接，可适当添加连接词提升连贯性\n4. 多朗读英语例句培养语感，特别注意介词在口语中的自然使用",
+      "suggestions": [
+        "1. 重点强化以下语法点：",
+        "- 形容词与介词的固定搭配（capable of, interested in, familiar with）",
+        "- 条件句的三种类型及时态对应关系"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "介词误用",
+          "explanation": "固定搭配错误。'look forward to'是固定短语，其中'to'是介词，后接名词或动名词。"
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "形容词搭配错误",
+          "explanation": "形容词'capable'需与介词'of'搭配，后接动名词形式。正确结构为'be capable of doing something'。"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "介词误用",
+          "explanation": "形容词'interested'应与介词'in'搭配。正确结构为'be interested in (doing) something'。"
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "形容词搭配错误",
+          "explanation": "当主语是人时，'familiar'应与介词'with'搭配。'Familiar to'用于事物作主语的情况（如：The song is familiar to me）。"
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "条件句时态错误",
+          "explanation": "第一条件句中，if从句用一般现在时表将来，主句用将来时。不可在if从句中使用'will'。"
+        }
+      ],
+      "corrected_text": "I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train."
+    },
+    "type": "text",
+    "created_at": "2026-01-24 16:35:12"
+  },
+  {
+    "id": 7,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"Preposition Error\",\n    \"explanation\": \"The correct phrase is 'look forward to' followed by a noun or gerund. 'For' is incorrect here.\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"Adjective Preposition Error\",\n    \"explanation\": \"The adjective 'capable' requires the preposition 'of' followed by a gerund. Infinitive form 'to do' is incorrect.\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"Adjective Preposition Error\",\n    \"explanation\": \"The adjective 'interested' requires the preposition 'in' followed by a gerund. 'For' is incorrect.\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"Adjective Preposition Error\",\n    \"explanation\": \"The adjective 'familiar' requires the preposition 'with' when referring to knowledge of something. 'To' is incorrect here.\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"Conditional Tense Error\",\n    \"explanation\": \"In first conditional sentences, the if-clause uses present simple tense, not future tense. Remove 'will' from the if-clause.\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"Subjunctive Mood Error\",\n    \"explanation\": \"Hypothetical conditions (second conditional) require past subjunctive form 'were' for all subjects, not 'was'.\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"Conditional Consistency Error\",\n    \"explanation\": \"First conditional (real possibility) requires present simple in if-clause and 'will' in main clause. Mixing 'rains' with 'would' creates inconsistency.\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"Double Negative Error\",\n    \"explanation\": \"'Unless' already implies negation, so removing 'don't' prevents double negative. Alternatively: 'If you don't hurry, you will miss...'\"\n  }\n]\n```\n\n修改后的完整文本：\n```\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area.\nIf I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n```\n\n评分：6.5/10\n改进建议：\n1. 系统学习形容词搭配的介词（如 capable of, interested in, familiar with）\n2. 重点掌握条件句结构：第一条件句（if + present → will），第二条件句（if + past → would）\n3. 注意否定表达的准确性，避免双重否定错误\n4. 加强固定短语记忆（如 look forward to 中的 to 是介词）\n5. 练习虚拟语气的特殊形式（如 If I were... 的倒装结构）",
+      "suggestions": [
+        "1. 系统学习形容词搭配的介词（如 capable of, interested in, familiar with）",
+        "2. 重点掌握条件句结构：第一条件句（if + present → will），第二条件句（if + past → would）",
+        "3. 注意否定表达的准确性，避免双重否定错误"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "Preposition Error",
+          "explanation": "The correct phrase is 'look forward to' followed by a noun or gerund. 'For' is incorrect here."
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "Adjective Preposition Error",
+          "explanation": "The adjective 'capable' requires the preposition 'of' followed by a gerund. Infinitive form 'to do' is incorrect."
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "Adjective Preposition Error",
+          "explanation": "The adjective 'interested' requires the preposition 'in' followed by a gerund. 'For' is incorrect."
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "Adjective Preposition Error",
+          "explanation": "The adjective 'familiar' requires the preposition 'with' when referring to knowledge of something. 'To' is incorrect here."
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "Conditional Tense Error",
+          "explanation": "In first conditional sentences, the if-clause uses present simple tense, not future tense. Remove 'will' from the if-clause."
+        }
+      ],
+      "corrected_text": ""
+    },
+    "type": "text",
+    "created_at": "2026-01-24 16:42:03"
+  },
+  {
+    "id": 8,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "以下是按照要求生成的JSON格式的错误列表、修改后的完整文本以及评分和改进建议：\n\n```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"Preposition\",\n    \"explanation\": \"The correct preposition after 'looking forward' is 'to', not 'for'.\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"Verb Form\",\n    \"explanation\": \"The correct phrase is 'capable of doing something'.\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"Preposition\",\n    \"explanation\": \"The correct preposition after 'interested' is 'in', not 'for'.\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"Preposition\",\n    \"explanation\": \"The correct preposition after 'familiar' is 'with', not 'to'.\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"Conditional Sentence\",\n    \"explanation\": \"In first conditional sentences, the 'if' clause uses the simple present tense, not future tense.\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"Subjunctive Mood\",\n    \"explanation\": \"For hypothetical situations, use the subjunctive mood 'were' instead of 'was'.\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"Conditional Sentence\",\n    \"explanation\": \"This is a first conditional sentence, so the main clause should use 'will' instead of 'would'.\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"Double Negative\",\n    \"explanation\": \"'Unless' already implies a negative, so using 'don't' creates a double negative. Remove 'don't'.\"\n  }\n]\n```\n\n**修改后的完整文本:**\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n**评分: 6/10**\n\n**改进建议:**\n- 注意固定搭配中的介词使用，如 `look forward to`、`be capable of`、`be interested in`、`be familiar with`。\n- 确保条件句的主从句时态一致，特别是第一条件句用一般现在时 + will，第二条件句用一般过去时（虚拟语气） + would。\n- 避免双重否定，`unless`本身已含否定意义，无需再加`not`。",
+      "suggestions": [
+        "```json",
+        "[",
+        "{"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "Preposition",
+          "explanation": "The correct preposition after 'looking forward' is 'to', not 'for'."
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "Verb Form",
+          "explanation": "The correct phrase is 'capable of doing something'."
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "Preposition",
+          "explanation": "The correct preposition after 'interested' is 'in', not 'for'."
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "Preposition",
+          "explanation": "The correct preposition after 'familiar' is 'with', not 'to'."
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "Conditional Sentence",
+          "explanation": "In first conditional sentences, the 'if' clause uses the simple present tense, not future tense."
+        }
+      ],
+      "corrected_text": "**\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n**"
+    },
+    "type": "text",
+    "created_at": "2026-01-24 16:49:32"
+  },
+  {
+    "id": 9,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题",
+        "拼写错误"
+      ],
+      "detailed_errors": [],
+      "corrected_text": ""
+    },
+    "type": "text",
+    "created_at": "2026-01-24 16:59:49"
+  },
+  {
+    "id": 10,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n    {\n        \"original\": \"I'm looking forward for your reply.\",\n        \"corrected\": \"I'm looking forward to your reply.\",\n        \"error_type\": \"介词误用\",\n        \"explanation\": \"固定搭配错误。'look forward to' 中的 'to' 是介词，后接名词或动名词，不能用 'for'。\"\n    },\n    {\n        \"original\": \"She is capable to do the job.\",\n        \"corrected\": \"She is capable of doing the job.\",\n        \"error_type\": \"形容词搭配错误\",\n        \"explanation\": \"形容词 'capable' 需与介词 'of' 搭配，后接动名词形式，不能直接跟不定式。\"\n    },\n    {\n        \"original\": \"He is interested for learning English.\",\n        \"corrected\": \"He is interested in learning English.\",\n        \"error_type\": \"介词误用\",\n        \"explanation\": \"形容词 'interested' 需与介词 'in' 搭配，表示对某事的兴趣。\"\n    },\n    {\n        \"original\": \"We are familiar to this area.\",\n        \"corrected\": \"We are familiar with this area.\",\n        \"error_type\": \"形容词搭配错误\",\n        \"explanation\": \"主语为人时，'familiar' 需与介词 'with' 搭配；若用 'to'，则主语应为事物（如：The area is familiar to us）。\"\n    },\n    {\n        \"original\": \"If I will have time, I will visit you.\",\n        \"corrected\": \"If I have time, I will visit you.\",\n        \"error_type\": \"条件句结构错误\",\n        \"explanation\": \"第一条件句中，if从句需用一般现在时表将来，主句用将来时，不能在if从句中使用 'will'。\"\n    },\n    {\n        \"original\": \"If I was you, I would accept the offer.\",\n        \"corrected\": \"If I were you, I would accept the offer.\",\n        \"error_type\": \"虚拟语气错误\",\n        \"explanation\": \"第二条件句中，be动词的虚拟形式统一用 'were'，无论主语是第几人称。\"\n    },\n    {\n        \"original\": \"If it rains tomorrow, we would stay at home.\",\n        \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n        \"error_type\": \"时态不一致\",\n        \"explanation\": \"第一条件句中，if从句用一般现在时，主句需用 'will + 动词原形' 表结果。\"\n    },\n    {\n        \"original\": \"Unless you don't hurry, you will miss the train.\",\n        \"corrected\": \"Unless you hurry, you will miss the train.\",\n        \"error_type\": \"双重否定逻辑错误\",\n        \"explanation\": \"'unless' 本身含否定含义（= if...not），不能再与 'don't' 连用，否则造成逻辑矛盾。\"\n    }\n]\n```\n\n**修改后的完整文本：**\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n**评分与改进建议：**\n1. **评分（满分10分）：5.5/10**  \n   - 语法准确性：4/6（主要问题集中在介词搭配和条件句结构）\n   - 表达流畅性：3/4（句子间缺乏逻辑连接词）\n\n2. **改进建议：**  \n   - **强化固定搭配记忆**：重点掌握形容词+介词组合（capable of, interested in, familiar with）。\n   - **区分条件句类型**：  \n     - 第一条件句（真实条件）：If + 一般现在时，主句用将来时  \n     - 第二条件句（虚拟现在）：If + 过去时（be动词用were），主句用would+动词原形  \n   - **避免冗余否定**：注意unless/without等词本身已含否定含义，无需再加not。\n   - **增加连贯性**：可通过添加过渡词（However, Therefore）或合并简单句提升段落衔接。",
+      "suggestions": [
+        "**",
+        "1. **评分（满分10分）：5.5/10**",
+        "- 语法准确性：4/6（主要问题集中在介词搭配和条件句结构）"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "介词误用",
+          "explanation": "固定搭配错误。'look forward to' 中的 'to' 是介词，后接名词或动名词，不能用 'for'。"
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "形容词搭配错误",
+          "explanation": "形容词 'capable' 需与介词 'of' 搭配，后接动名词形式，不能直接跟不定式。"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "介词误用",
+          "explanation": "形容词 'interested' 需与介词 'in' 搭配，表示对某事的兴趣。"
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "形容词搭配错误",
+          "explanation": "主语为人时，'familiar' 需与介词 'with' 搭配；若用 'to'，则主语应为事物（如：The area is familiar to us）。"
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "条件句结构错误",
+          "explanation": "第一条件句中，if从句需用一般现在时表将来，主句用将来时，不能在if从句中使用 'will'。"
+        }
+      ],
+      "corrected_text": "**\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n**"
+    },
+    "type": "text",
+    "created_at": "2026-01-24 17:01:20"
+  },
+  {
+    "id": 11,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "以下是对这篇英语作文的批改：\n\n```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"介词错误\",\n    \"explanation\": \"“look forward to”是固定搭配，意为“期待”，to在这里是介词，后面接名词、代词或动名词形式，不能用for。\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"介词及动词形式错误\",\n    \"explanation\": \"“be capable of doing sth.”是固定用法，表示“有能力做某事”，of是介词，后面要接动名词形式，而不是不定式形式。\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"介词错误\",\n    \"explanation\": \"“be interested in doing sth.”是固定短语，意思是“对做某事感兴趣”，in是介词，不能用for。\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"介词错误\",\n    \"explanation\": \"“be familiar with”表示“熟悉……”，with后接所熟悉的事物；而“be familiar to”的主语通常是事物，表示“为……所熟悉”。这里表达“我们熟悉这个地区”，应用with。\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"时态错误\",\n    \"explanation\": \"在if引导的条件状语从句中，要用一般现在时表示将来的情况，不能用一般将来时，所以要把will去掉。\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"虚拟语气错误\",\n    \"explanation\": \"这是对现在情况的虚拟，在虚拟条件句中，be动词要用were，不管主语是第几人称，所以要把was改为were。\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"时态不一致错误\",\n    \"explanation\": \"根据语境，这是一个真实条件句，“如果明天下雨，我们就呆在家里”，主句应该用一般将来时will，而不是would。\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"双重否定错误\",\n    \"explanation\": \"“unless”本身意思就是“除非，如果不”，本身就含有否定的意思，和后面的“don't”构成双重否定，语义重复了，应把“don't”去掉。\"\n  }\n]\n```\n\n**修改后的完整文本**：\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n**评分**：4分（满分10分）\n这篇作文存在较多语法方面的错误，涵盖了介词使用、时态以及虚拟语气等多个知识点的问题，整体语言准确性欠佳，但在基本的句子结构和表意逻辑上还是能够让人大致理解其想表达的内容。\n\n**改进建议**：\n- 加强对固定搭配和短语的学习，比如“look forward to”“be capable of”等，牢记这些搭配的正确形式，避免在使用中出现介词等方面的错误。\n- 深入学习各类时态在不同语境下的运用规则，特别是条件状语从句中的时态要求，多做一些相关的练习题来强化记忆。\n- 仔细研习虚拟语气的相关语法知识，通过分析例句、进行仿写等方式，掌握不同情况下虚拟语气的正确表达形式，提高语言的准确性。",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "介词错误",
+          "explanation": "“look forward to”是固定搭配，意为“期待”，to在这里是介词，后面接名词、代词或动名词形式，不能用for。"
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "介词及动词形式错误",
+          "explanation": "“be capable of doing sth.”是固定用法，表示“有能力做某事”，of是介词，后面要接动名词形式，而不是不定式形式。"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "介词错误",
+          "explanation": "“be interested in doing sth.”是固定短语，意思是“对做某事感兴趣”，in是介词，不能用for。"
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "介词错误",
+          "explanation": "“be familiar with”表示“熟悉……”，with后接所熟悉的事物；而“be familiar to”的主语通常是事物，表示“为……所熟悉”。这里表达“我们熟悉这个地区”，应用with。"
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "时态错误",
+          "explanation": "在if引导的条件状语从句中，要用一般现在时表示将来的情况，不能用一般将来时，所以要把will去掉。"
+        }
+      ],
+      "corrected_text": ""
+    },
+    "type": "text",
+    "created_at": "2026-01-24 17:12:25"
+  },
+  {
+    "id": 12,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"介词使用错误\",\n    \"explanation\": \"固定搭配应为'look forward to'，其中to是介词，后接名词或动名词。\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"capable的正确搭配是'capable of + 动名词'，表示有能力做某事。\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"介词使用错误\",\n    \"explanation\": \"interested的正确搭配是'interested in'，表示对某事物感兴趣。\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"familiar的正确搭配是'familiar with'，表示熟悉某事物。'familiar to'意为\"为...所熟悉\"，主语通常是事物。\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"条件句语法错误\",\n    \"explanation\": \"在真实条件句中，if从句用一般现在时表将来，主句用将来时。不能在if从句中使用will。\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"虚拟语气错误\",\n    \"explanation\": \"在虚拟条件句中，be动词无论人称都用were。这是与现实相反的假设，需用虚拟语气。\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"时态不一致\",\n    \"explanation\": \"真实条件句中，if从句用一般现在时，主句应用'will'而不是'would'。'would'仅用于虚拟语气。\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"双重否定错误\",\n    \"explanation\": \"unless本身已含否定意义（=if...not），不能再与don't连用，会造成逻辑矛盾。\"\n  }\n]\n```\n\n修改后的完整文本：\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n评分：6.5/10\n改进建议：\n1. 加强固定搭配记忆（如look forward to, capable of）\n2. 注意条件句类型区分（真实条件 vs 虚拟语气）\n3. 避免双重否定结构\n4. 多进行句子结构分析练习，特别是复合句中的主谓一致问题\n5. 建议建立常见错误搭配笔记本，定期复习易错知识点",
+      "suggestions": [
+        "1. 加强固定搭配记忆（如look forward to, capable of）",
+        "2. 注意条件句类型区分（真实条件 vs 虚拟语气）",
+        "3. 避免双重否定结构"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [],
+      "corrected_text": "I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train."
+    },
+    "type": "text",
+    "created_at": "2026-01-24 17:15:08"
+  },
+  {
+    "id": 13,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"Preposition Error\",\n    \"explanation\": \"The correct phrase is 'look forward to' (not 'for'). The preposition 'to' is required after 'forward' in this context.\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"Adjective Preposition Error\",\n    \"explanation\": \"The adjective 'capable' requires the preposition 'of' followed by a gerund. Alternative correction: 'She is able to do the job.'\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"Adjective Preposition Error\",\n    \"explanation\": \"The adjective 'interested' requires the preposition 'in'. The structure should be 'interested in + gerund'.\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"Adjective Preposition Error\",\n    \"explanation\": \"The adjective 'familiar' requires the preposition 'with' when referring to knowledge of something. 'Familiar to' would be used if the subject was known to someone else (e.g., 'This area is familiar to us').\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"Conditional Tense Error\",\n    \"explanation\": \"In first conditional sentences, the 'if' clause uses present simple tense, not future tense. Structure: If + present simple, ... will + base verb.\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"Subjunctive Mood Error\",\n    \"explanation\": \"For hypothetical second conditionals, we use 'were' instead of 'was' for all subjects (subjunctive mood). Though common in informal speech, 'was' is grammatically incorrect here.\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"Conditional Consistency Error\",\n    \"explanation\": \"Mixing first conditional ('if + present simple') with second conditional ('would') creates inconsistency. Should either be: 1st conditional: '...will stay' or 2nd conditional: 'If it rained..., we would stay'.\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"Double Negative Error\",\n    \"explanation\": \"'Unless' already implies negation, so using 'don't' creates an illogical double negative. 'Unless' = 'if... not', so the sentence means: 'If you do not hurry, you will miss the train.'\"\n  }\n]\n```\n\n修改后的完整文本：\n```\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area.\nIf I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n```\n\n评分：6.5/10\n改进建议：\n1. 系统复习介词搭配（特别是形容词+preposition结构）\n2. 重点掌握四种条件句结构（零/一/二/三条件句）\n3. 注意否定表达的准确性（避免双重否定）\n4. 练习虚拟语气的用法（尤其是第二、第三条件句）\n5. 加强句子连贯性训练，尝试使用连接词和复合句\n6. 推荐使用语法检查工具（如Grammarly）辅助学习",
+      "suggestions": [
+        "1. 系统复习介词搭配（特别是形容词+preposition结构）",
+        "2. 重点掌握四种条件句结构（零/一/二/三条件句）",
+        "3. 注意否定表达的准确性（避免双重否定）"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "Preposition Error",
+          "explanation": "The correct phrase is 'look forward to' (not 'for'). The preposition 'to' is required after 'forward' in this context."
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "Adjective Preposition Error",
+          "explanation": "The adjective 'capable' requires the preposition 'of' followed by a gerund. Alternative correction: 'She is able to do the job.'"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "Adjective Preposition Error",
+          "explanation": "The adjective 'interested' requires the preposition 'in'. The structure should be 'interested in + gerund'."
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "Adjective Preposition Error",
+          "explanation": "The adjective 'familiar' requires the preposition 'with' when referring to knowledge of something. 'Familiar to' would be used if the subject was known to someone else (e.g., 'This area is familiar to us')."
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "Conditional Tense Error",
+          "explanation": "In first conditional sentences, the 'if' clause uses present simple tense, not future tense. Structure: If + present simple, ... will + base verb."
+        }
+      ],
+      "corrected_text": ""
+    },
+    "type": "text",
+    "created_at": "2026-01-24 17:16:27"
+  },
+  {
+    "id": 14,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"固定搭配错误。'look forward to'中的'to'是介词，后面接名词或动名词，不能用'for'。\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"形容词'capable'需与介词'of'搭配，后接动名词形式，不能直接跟不定式。\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"形容词'interested'需与介词'in'搭配，表示对某事物的兴趣。\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"主语为人时，'familiar'需与'with'搭配，表示熟悉某事物；若用'to'则主语应为事物（如：The area is familiar to us）。\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"条件句语法错误\",\n    \"explanation\": \"第一条件句中，if从句需用一般现在时表将来，主句用将来时，不可在if从句中加'will'。\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"虚拟语气错误\",\n    \"explanation\": \"第二条件句表示与现在事实相反的假设，be动词需用'were'，而非'was'。\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"时态不一致\",\n    \"explanation\": \"第一条件句中，if从句用一般现在时，主句应用'will'表将来结果，而非'would'。\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"双重否定错误\",\n    \"explanation\": \"'unless'本身含否定意义，相当于'if...not'，因此不能再与'don't'连用，会造成逻辑矛盾。\"\n  }\n]\n```\n\n修改后的完整文本：\n```\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n```\n\n评分：6.5/10\n改进建议：\n1. 加强固定搭配记忆（如look forward to, be capable of）\n2. 注意条件句类型区分（真实条件句vs虚拟条件句）\n3. 避免双重否定结构（特别注意unless的用法）\n4. 掌握虚拟语气中be动词的特殊形式（were适用于所有主语）\n5. 增加复杂句式多样性，可尝试使用不同类型的连接词（e.g. provided that, as long as）",
+      "suggestions": [
+        "1. 加强固定搭配记忆（如look forward to, be capable of）",
+        "2. 注意条件句类型区分（真实条件句vs虚拟条件句）",
+        "3. 避免双重否定结构（特别注意unless的用法）"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "介词误用",
+          "explanation": "固定搭配错误。'look forward to'中的'to'是介词，后面接名词或动名词，不能用'for'。"
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "形容词搭配错误",
+          "explanation": "形容词'capable'需与介词'of'搭配，后接动名词形式，不能直接跟不定式。"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "介词误用",
+          "explanation": "形容词'interested'需与介词'in'搭配，表示对某事物的兴趣。"
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "介词误用",
+          "explanation": "主语为人时，'familiar'需与'with'搭配，表示熟悉某事物；若用'to'则主语应为事物（如：The area is familiar to us）。"
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "条件句语法错误",
+          "explanation": "第一条件句中，if从句需用一般现在时表将来，主句用将来时，不可在if从句中加'will'。"
+        }
+      ],
+      "corrected_text": ""
+    },
+    "type": "text",
+    "created_at": "2026-01-24 17:20:14"
+  },
+  {
+    "id": 15,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"固定搭配错误。'look forward to'中的'to'是介词，后接名词或动名词，不能用'for'。\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"形容词'capable'需与介词'of'连用，后接动名词形式。正确结构为'be capable of doing'。\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"形容词'interested'需与介词'in'连用，表示对某事的兴趣。'for'在此处不符合语法规则。\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"当表示'熟悉某物'时，应使用'familiar with'。'familiar to'用于表达'某物为某人所熟知'，如：This song is familiar to me.\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"条件句错误\",\n    \"explanation\": \"第一条件句中，if从句需用一般现在时表将来，主句用将来时。不可在if从句中使用'will'。\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"虚拟语气错误\",\n    \"explanation\": \"第二条件句表示与现在事实相反的假设，be动词需用虚拟语气'were'，无论主语是什么人称。\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"时态不一致\",\n    \"explanation\": \"第一条件句中，if从句用一般现在时（rains），主句应使用'will'+动词原形，表示可能发生的真实情况。\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"双重否定错误\",\n    \"explanation\": \"'unless'本身已含否定意义（= if...not），不能再与'don't'连用，会造成逻辑矛盾。\"\n  }\n]\n```\n\n修改后的完整文本：\n```\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area.\nIf I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n```\n\n评分：6.5/10\n改进建议：\n1. 加强固定搭配记忆（如look forward to, be capable of）\n2. 注意条件句的时态配合（真实条件vs虚拟语气）\n3. 避免双重否定结构（unless+否定式）\n4. 区分familiar with/to的不同用法\n5. 增加复合句练习提升句子衔接能力",
+      "suggestions": [
+        "1. 加强固定搭配记忆（如look forward to, be capable of）",
+        "2. 注意条件句的时态配合（真实条件vs虚拟语气）",
+        "3. 避免双重否定结构（unless+否定式）"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "介词误用",
+          "explanation": "固定搭配错误。'look forward to'中的'to'是介词，后接名词或动名词，不能用'for'。"
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "形容词搭配错误",
+          "explanation": "形容词'capable'需与介词'of'连用，后接动名词形式。正确结构为'be capable of doing'。"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "介词误用",
+          "explanation": "形容词'interested'需与介词'in'连用，表示对某事的兴趣。'for'在此处不符合语法规则。"
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "形容词搭配错误",
+          "explanation": "当表示'熟悉某物'时，应使用'familiar with'。'familiar to'用于表达'某物为某人所熟知'，如：This song is familiar to me."
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "条件句错误",
+          "explanation": "第一条件句中，if从句需用一般现在时表将来，主句用将来时。不可在if从句中使用'will'。"
+        }
+      ],
+      "corrected_text": ""
+    },
+    "type": "text",
+    "created_at": "2026-01-24 17:25:50"
+  },
+  {
+    "id": 16,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"固定搭配错误。'look forward to'中的'to'是介词，后面接名词或动名词，不能用'for'。\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"形容词'capable'需与介词'of'搭配，后接动名词形式，不能直接跟不定式。\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"形容词'interested'需与介词'in'搭配，表示对某事的兴趣。\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"主语为人时，'familiar'需与'with'搭配；若主语是事物，则用'familiar to'（如：The area is familiar to us）。\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"条件句语法错误\",\n    \"explanation\": \"第一条件句中，if从句需用一般现在时表将来，主句用将来时。\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"虚拟语气错误\",\n    \"explanation\": \"第二条件句表示与现在事实相反，be动词需用虚拟语气'were'，无论主语人称。\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"时态不一致\",\n    \"explanation\": \"第一条件句中，if从句用一般现在时，主句应用'will'表将来结果，而非'would'。\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"双重否定逻辑错误\",\n    \"explanation\": \"'unless'本身含否定含义（=if...not），再加'don't'会导致逻辑矛盾。\"\n  }\n]\n```\n\n修改后的完整文本：\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n\n评分：6.5/10\n改进建议：\n1. 加强固定搭配记忆（如look forward to, be capable of）\n2. 注意条件句的时态结构（特别是第一/第二条件句的区别）\n3. 避免双重否定（unless与don't连用会导致逻辑混乱）\n4. 区分主语为人/物时形容词的不同介词搭配（如familiar with/to）\n5. 强化虚拟语气用法训练（特别是be动词的虚拟形式were的使用）",
+      "suggestions": [
+        "1. 加强固定搭配记忆（如look forward to, be capable of）",
+        "2. 注意条件句的时态结构（特别是第一/第二条件句的区别）",
+        "3. 避免双重否定（unless与don't连用会导致逻辑混乱）"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "介词误用",
+          "explanation": "固定搭配错误。'look forward to'中的'to'是介词，后面接名词或动名词，不能用'for'。"
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "形容词搭配错误",
+          "explanation": "形容词'capable'需与介词'of'搭配，后接动名词形式，不能直接跟不定式。"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "介词误用",
+          "explanation": "形容词'interested'需与介词'in'搭配，表示对某事的兴趣。"
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "介词误用",
+          "explanation": "主语为人时，'familiar'需与'with'搭配；若主语是事物，则用'familiar to'（如：The area is familiar to us）。"
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "条件句语法错误",
+          "explanation": "第一条件句中，if从句需用一般现在时表将来，主句用将来时。"
+        }
+      ],
+      "corrected_text": "I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train."
+    },
+    "type": "text",
+    "created_at": "2026-01-24 17:27:21"
+  },
+  {
+    "id": 17,
+    "content": "fer\n4\nt\n1\nEnd\nIns\nI'm looking forward for your reply. She is capable to do the\njob. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you,I would accept the\noffer.\n",
+    "result": {
+      "feedback": "```json\n{\n  \"errors\": [\n    {\n      \"original\": \"looking forward for\",\n      \"corrected\": \"looking forward to\",\n      \"error_type\": \"preposition error\",\n      \"explanation\": \"The correct preposition after 'look forward' is 'to', not 'for'. This is a fixed phrase in English.\"\n    },\n    {\n      \"original\": \"capable to do\",\n      \"corrected\": \"capable of doing\",\n      \"error_type\": \"adjective complement error\",\n      \"explanation\": \"The adjective 'capable' requires the preposition 'of' followed by a gerund (verb+ing) or noun phrase.\"\n    },\n    {\n      \"original\": \"interested for learning\",\n      \"corrected\": \"interested in learning\",\n      \"error_type\": \"preposition error\",\n      \"explanation\": \"The adjective 'interested' requires the preposition 'in' when referring to an activity or subject.\"\n    },\n    {\n      \"original\": \"familiar to\",\n      \"corrected\": \"familiar with\",\n      \"error_type\": \"preposition error\",\n      \"explanation\": \"When describing knowledge about something, use 'familiar with'. 'Familiar to' is used when something is recognizable to someone (e.g., 'This song is familiar to me').\"\n    },\n    {\n      \"original\": \"If I will have time, I will visit you.\",\n      \"corrected\": \"If I have time, I will visit you.\",\n      \"error_type\": \"conditional tense error\",\n      \"explanation\": \"In first conditional sentences, the if-clause uses present simple tense, not future tense. The structure is: If + present simple, ... will + base verb.\"\n    },\n    {\n      \"original\": \"If I was you,I would accept the offer.\",\n      \"corrected\": \"If I were you, I would accept the offer.\",\n      \"error_type\": \"subjunctive mood error\",\n      \"explanation\": \"Second conditional sentences require the subjunctive form 'were' for all subjects (even singular) when expressing hypothetical situations. Also note the necessary space after the comma.\"\n    }\n  ],\n  \"corrected_text\": \"I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer.\",\n  \"score\": 45/100,\n  \"improvement_suggestions\": [\n    \"Review preposition usage with common adjectives (interested in, capable of, familiar with)\",\n    \"Practice conditional sentence structures (first and second conditionals)\",\n    \"Pay attention to comma placement after introductory clauses\",\n    \"Expand vocabulary to include more academic/professional expressions\",\n    \"Work on sentence variety and complexity\"\n  ]\n}\n```",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [],
+      "corrected_text": ""
+    },
+    "type": "image",
+    "created_at": "2026-01-24 18:25:07"
+  },
+  {
+    "id": 18,
+    "content": "fer\n4\nt\n1\nEnd\nIns\nI'm looking forward for your reply. She is capable to do the\njob. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you,I would accept the\noffer.\n",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"looking forward for\",\n    \"corrected\": \"looking forward to\",\n    \"error_type\": \"preposition error\",\n    \"explanation\": \"The correct phrase is 'look forward to' (not 'for'). The preposition 'to' is required after this phrasal verb.\"\n  },\n  {\n    \"original\": \"capable to do\",\n    \"corrected\": \"capable of doing\",\n    \"error_type\": \"adjective complement error\",\n    \"explanation\": \"The adjective 'capable' requires the preposition 'of' followed by a gerund. Correct structure: capable of + verb-ing.\"\n  },\n  {\n    \"original\": \"interested for learning\",\n    \"corrected\": \"interested in learning\",\n    \"error_type\": \"preposition error\",\n    \"explanation\": \"The correct phrase is 'interested in' (not 'for'). This is a fixed expression requiring the preposition 'in'.\"\n  },\n  {\n    \"original\": \"familiar to\",\n    \"corrected\": \"familiar with\",\n    \"error_type\": \"preposition error\",\n    \"explanation\": \"When referring to knowledge about something, use 'familiar with'. 'Familiar to' is used when something is recognizable to someone (e.g., 'This song is familiar to me').\"\n  },\n  {\n    \"original\": \"If I will have time\",\n    \"corrected\": \"If I have time\",\n    \"error_type\": \"conditional tense error\",\n    \"explanation\": \"In first conditional sentences, the if-clause uses present simple tense, not future tense. Structure: If + present simple, ... will + base verb.\"\n  },\n  {\n    \"original\": \"If I was you\",\n    \"corrected\": \"If I were you\",\n    \"error_type\": \"subjunctive mood error\",\n    \"explanation\": \"Hypothetical second conditional statements require the subjunctive mood 'were' for all subjects, not the indicative 'was'.\"\n  },\n  {\n    \"original\": \"I would accept the\\noffer.\",\n    \"corrected\": \"I would accept the offer.\",\n    \"error_type\": \"spacing error\",\n    \"explanation\": \"Remove unnecessary newline between article and noun. Maintain proper spacing in sentences.\"\n  }\n]\n```\n\n修改后的完整文本：\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer.\n\n评分：5/10\n（注：因用户提供的文本存在大量不相关内容\"fer\\n4\\nt\\n1\\nEnd\\nIns\"，实际有效句子仅最后6行，故主要针对这些内容评分）\n\n改进建议：\n1. 加强基础语法训练，特别是介词搭配和条件句结构\n2. 注意动词短语的固定搭配（如look forward to, be capable of）\n3. 学习形容词与介词的正确组合（interested in, familiar with）\n4. 掌握条件句的时态规则（第一条件句用现在时+将来时，第二条件句用过去时+would）\n5. 避免在正式写作中使用口语化表达\n6. 注意保持文本连贯性，删除无关内容",
+      "suggestions": [
+        "1. 加强基础语法训练，特别是介词搭配和条件句结构",
+        "2. 注意动词短语的固定搭配（如look forward to, be capable of）",
+        "3. 学习形容词与介词的正确组合（interested in, familiar with）"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "looking forward for",
+          "corrected": "looking forward to",
+          "error_type": "preposition error",
+          "explanation": "The correct phrase is 'look forward to' (not 'for'). The preposition 'to' is required after this phrasal verb."
+        },
+        {
+          "original": "capable to do",
+          "corrected": "capable of doing",
+          "error_type": "adjective complement error",
+          "explanation": "The adjective 'capable' requires the preposition 'of' followed by a gerund. Correct structure: capable of + verb-ing."
+        },
+        {
+          "original": "interested for learning",
+          "corrected": "interested in learning",
+          "error_type": "preposition error",
+          "explanation": "The correct phrase is 'interested in' (not 'for'). This is a fixed expression requiring the preposition 'in'."
+        },
+        {
+          "original": "familiar to",
+          "corrected": "familiar with",
+          "error_type": "preposition error",
+          "explanation": "When referring to knowledge about something, use 'familiar with'. 'Familiar to' is used when something is recognizable to someone (e.g., 'This song is familiar to me')."
+        },
+        {
+          "original": "If I will have time",
+          "corrected": "If I have time",
+          "error_type": "conditional tense error",
+          "explanation": "In first conditional sentences, the if-clause uses present simple tense, not future tense. Structure: If + present simple, ... will + base verb."
+        }
+      ],
+      "corrected_text": "I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer."
+    },
+    "type": "image",
+    "created_at": "2026-01-24 19:34:36"
+  },
+  {
+    "id": 19,
+    "content": "Last weekend, I have a great time with my family and friend. On Saturday morning, I go to the park with he. We play football there and talk with some classmate. In the noon, we eat a lot of snack in a small shop. On Sunday, I stay at home and watch TV, my mom cook some noodles for me. I like it very much. This weekend is busy but happy. I hope I can have a nice weekend again, and I want to go to zoo with my sister next time.\n",
+    "result": {
+      "feedback": "以下是对这篇英语作文的批改：\n\n```json\n{\n  \"errors\": [\n    {\n      \"original\": \"I have a great time\",\n      \"corrected\": \"I had a great time\",\n      \"error_type\": \"时态错误\",\n      \"explanation\": \"根据前文“Last weekend”可知，这里描述的是过去发生的事情，应该使用一般过去时，所以“have”要改为“had”。\"\n    },\n    {\n      \"original\": \"go to the park\",\n      \"corrected\": \"went to the park\",\n      \"error_type\": \"时态错误\",\n      \"explanation\": \"同样因为是上周末发生的事，要用一般过去时，“go”应变为“went”。\"\n    },\n    {\n      \"original\": \"with he\",\n      \"corrected\": \"with him\",\n      \"error_type\": \"代词用法错误\",\n      \"explanation\": \"“with”是介词，后面接人称代词时要用宾格形式，“he”是主格，这里应使用宾格“him”。\"\n    },\n    {\n      \"original\": \"We play football\",\n      \"corrected\": \"We played football\",\n      \"error_type\": \"时态错误\",\n      \"explanation\": \"该动作发生在过去，应用一般过去时，“play”要改为“played”。\"\n    },\n    {\n      \"original\": \"talk with some classmate\",\n      \"corrected\": \"talked with some classmates\",\n      \"error_type\": \"名词单复数及动词时态错误\",\n      \"explanation\": \"“some”表示“一些”，后接可数名词复数，“classmate”要变为“classmates”；且此处动词“talk”也要用过去式“talked”，以符合整体过去时的语境。\"\n    },\n    {\n      \"original\": \"In the noon\",\n      \"corrected\": \"At noon\",\n      \"error_type\": \"固定搭配错误\",\n      \"explanation\": \"表示“在中午”常用固定短语“at noon”，而不是“in the noon”。\"\n    },\n    {\n      \"original\": \"eat a lot of snack\",\n      \"corrected\": \"ate a lot of snacks\",\n      \"error_type\": \"名词单复数及动词时态错误\",\n      \"explanation\": \"“a lot of”后接可数名词复数，“snack”要变为“snacks”；“eat”要用过去式“ate”，因为说的是过去发生的动作。\"\n    },\n    {\n      \"original\": \"my mom cook some noodles for me\",\n      \"corrected\": \"my mom cooked some noodles for me\",\n      \"error_type\": \"时态错误\",\n      \"explanation\": \"事情是在过去发生的，“cook”要用一般过去时“cooked”。\"\n    },\n    {\n      \"original\": \"I like it very much\",\n      \"corrected\": \"I liked them very much\",\n      \"error_type\": \"代词指代及时态错误\",\n      \"explanation\": \"前面提到的“noodles”是复数，所以这里应用“them”来指代；并且全文讲述的是过去的周末，“like”也应用过去式“liked”。\"\n    },\n    {\n      \"original\": \"This weekend is busy but happy\",\n      \"corrected\": \"That weekend was busy but happy\",\n      \"error_type\": \"时态及指示代词错误\",\n      \"explanation\": \"结合前文一直在说“last weekend”的情况，这里用“this”不合适，应用“that”来指代前面提到的那个周末；同时，对应的be动词“is”也要用过去式“was”。\"\n    },\n    {\n      \"original\": \"go to zoo\",\n      \"corrected\": \"go to the zoo\",\n      \"error_type\": \"冠词缺失\",\n      \"explanation\": \"“zoo”是可数名词单数，在这里表示去特定的动物园，需要在前面加上定冠词“the”。\"\n    }\n  ],\n  \"corrected_text\": \"Last weekend, I had a great time with my family and friend. On Saturday morning, I went to the park with him. We played football there and talked with some classmates. At noon, we ate a lot of snacks in a small shop. On Sunday, I stayed at home and watched TV. My mom cooked some noodles for me. I liked them very much. That weekend was busy but happy. I hope I can have a nice weekend again, and I want to go to the zoo with my sister next time.\",\n  \"score\": 50,\n  \"improvement_advice\": \"这篇作文存在较多基础语法方面的错误，像时态、名词单复数、代词用法以及固定搭配等都需要加强学习和练习。平时可以多做一些相关的语法专项练习，写作完成后认真检查，避免出现这类常见的语法失误，以提高作文的质量。\"\n}\n```",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I have a great time",
+          "corrected": "I had a great time",
+          "error_type": "时态错误",
+          "explanation": "根据前文“Last weekend”可知，这里描述的是过去发生的事情，应该使用一般过去时，所以“have”要改为“had”。"
+        },
+        {
+          "original": "go to the park",
+          "corrected": "went to the park",
+          "error_type": "时态错误",
+          "explanation": "同样因为是上周末发生的事，要用一般过去时，“go”应变为“went”。"
+        },
+        {
+          "original": "with he",
+          "corrected": "with him",
+          "error_type": "代词用法错误",
+          "explanation": "“with”是介词，后面接人称代词时要用宾格形式，“he”是主格，这里应使用宾格“him”。"
+        },
+        {
+          "original": "We play football",
+          "corrected": "We played football",
+          "error_type": "时态错误",
+          "explanation": "该动作发生在过去，应用一般过去时，“play”要改为“played”。"
+        },
+        {
+          "original": "talk with some classmate",
+          "corrected": "talked with some classmates",
+          "error_type": "名词单复数及动词时态错误",
+          "explanation": "“some”表示“一些”，后接可数名词复数，“classmate”要变为“classmates”；且此处动词“talk”也要用过去式“talked”，以符合整体过去时的语境。"
+        }
+      ],
+      "corrected_text": "Last weekend, I had a great time with my family and friend. On Saturday morning, I went to the park with him. We played football there and talked with some classmates. At noon, we ate a lot of snacks in a small shop. On Sunday, I stayed at home and watched TV. My mom cooked some noodles for me. I liked them very much. That weekend was busy but happy. I hope I can have a nice weekend again, and I want to go to the zoo with my sister next time."
+    },
+    "type": "text",
+    "created_at": "2026-01-24 20:45:50"
+  },
+  {
+    "id": 20,
+    "content": "Last weekend, I have a great time with my family and friend. On Saturday morning, I go to the park with he. We play football there and talk with some classmate. In the noon, we eat a lot of snack in a small shop. On Sunday, I stay at home and watch TV, my mom cook some noodles for me. I like it very much. This weekend is busy but happy. I hope I can have a nice weekend again, and I want to go to zoo with my sister next time.",
+    "result": {
+      "feedback": "```json\n{\n  \"errors\": [\n    {\n      \"original\": \"I have a great time\",\n      \"corrected\": \"I had a great time\",\n      \"error_type\": \"时态错误\",\n      \"explanation\": \"时间状语'Last weekend'要求使用一般过去时，have应改为had\"\n    },\n    {\n      \"original\": \"friend\",\n      \"corrected\": \"friends\",\n      \"error_type\": \"可数名词单复数\",\n      \"explanation\": \"family和friend作为并列成分，根据语境应使用复数形式表示多个同伴\"\n    },\n    {\n      \"original\": \"go to the park\",\n      \"corrected\": \"went to the park\",\n      \"error_type\": \"时态错误\",\n      \"explanation\": \"叙述过去事件应保持时态一致，go需改为过去式went\"\n    },\n    {\n      \"original\": \"with he\",\n      \"corrected\": \"with him\",\n      \"error_type\": \"代词格错误\",\n      \"explanation\": \"介词with后应接宾格代词，he的主格形式需改为him\"\n    },\n    {\n      \"original\": \"play football\",\n      \"corrected\": \"played football\",\n      \"error_type\": \"时态错误\",\n      \"explanation\": \"描述周六早上的过往活动，动词play需用过去式\"\n    },\n    {\n      \"original\": \"classmate\",\n      \"corrected\": \"classmates\",\n      \"error_type\": \"可数名词单复数\",\n      \"explanation\": \"some修饰可数名词时需用复数形式\"\n    },\n    {\n      \"original\": \"In the noon\",\n      \"corrected\": \"At noon\",\n      \"error_type\": \"固定搭配错误\",\n      \"explanation\": \"表达正午时分的正确介词搭配是at noon\"\n    },\n    {\n      \"original\": \"eat a lot of snack\",\n      \"corrected\": \"ate a lot of snacks\",\n      \"error_type\": \"时态及名词复数\",\n      \"explanation\": \"过去时态需将eat改为ate，同时a lot of修饰可数名词snack需用复数\"\n    },\n    {\n      \"original\": \"my mom cook some noodles\",\n      \"corrected\": \"my mom cooked some noodles\",\n      \"error_type\": \"时态错误\",\n      \"explanation\": \"描述周日发生的过去动作，cook需改为过去式cooked\"\n    },\n    {\n      \"original\": \"This weekend is busy\",\n      \"corrected\": \"The weekend was busy\",\n      \"error_type\": \"冠词及动词时态\",\n      \"explanation\": \"特指上文提到的周末需加定冠词the，且全文统一使用过去时态\"\n    },\n    {\n      \"original\": \"go to zoo\",\n      \"corrected\": \"go to the zoo\",\n      \"error_type\": \"冠词缺失\",\n      \"explanation\": \"可数名词zoo前需加定冠词the表示特定场所\"\n    }\n  ],\n  \"corrected_text\": \"Last weekend, I had a great time with my family and friends. On Saturday morning, I went to the park with him. We played football there and talked with some classmates. At noon, we ate a lot of snacks in a small shop. On Sunday, I stayed at home and watched TV. My mom cooked some noodles for me. I liked them very much. The weekend was busy but happy. I hope I can have another nice weekend, and I want to go to the zoo with my sister next time.\",\n  \"score\": 65,\n  \"improvement_tips\": \"1. 加强时态一致性训练，特别注意叙事文中过去时态的统一运用\\n2. 系统学习可数名词与不可数名词的用法区别\\n3. 强化代词不同格形式的语法认知\\n4. 注意英语固定搭配的积累（如at noon）\\n5. 提升复杂句式的构建能力，建议尝试使用从句等结构\\n6. 增加连接词的使用使行文更连贯\"\n}\n```",
+      "suggestions": [
+        "增强论点的说服力",
+        "改善句子结构多样性",
+        "增加具体例子"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I have a great time",
+          "corrected": "I had a great time",
+          "error_type": "时态错误",
+          "explanation": "时间状语'Last weekend'要求使用一般过去时，have应改为had"
+        },
+        {
+          "original": "friend",
+          "corrected": "friends",
+          "error_type": "可数名词单复数",
+          "explanation": "family和friend作为并列成分，根据语境应使用复数形式表示多个同伴"
+        },
+        {
+          "original": "go to the park",
+          "corrected": "went to the park",
+          "error_type": "时态错误",
+          "explanation": "叙述过去事件应保持时态一致，go需改为过去式went"
+        },
+        {
+          "original": "with he",
+          "corrected": "with him",
+          "error_type": "代词格错误",
+          "explanation": "介词with后应接宾格代词，he的主格形式需改为him"
+        },
+        {
+          "original": "play football",
+          "corrected": "played football",
+          "error_type": "时态错误",
+          "explanation": "描述周六早上的过往活动，动词play需用过去式"
+        }
+      ],
+      "corrected_text": "Last weekend, I had a great time with my family and friends. On Saturday morning, I went to the park with him. We played football there and talked with some classmates. At noon, we ate a lot of snacks in a small shop. On Sunday, I stayed at home and watched TV. My mom cooked some noodles for me. I liked them very much. The weekend was busy but happy. I hope I can have another nice weekend, and I want to go to the zoo with my sister next time."
+    },
+    "type": "text",
+    "created_at": "2026-01-24 21:31:13"
+  },
+  {
+    "id": 21,
+    "content": "I'm looking forward for your reply. She is capable to do the job. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you, I would accept the offer. If it rains tomorrow, we would stay at home. Unless you don't hurry, you will miss the train.",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"I'm looking forward for your reply.\",\n    \"corrected\": \"I'm looking forward to your reply.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"固定搭配错误。'look forward to'是正确表达，其中'to'是介词，后接名词或动名词。\"\n  },\n  {\n    \"original\": \"She is capable to do the job.\",\n    \"corrected\": \"She is capable of doing the job.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"形容词'capable'需与介词'of'搭配，后接动名词形式。'be capable of doing'是正确结构。\"\n  },\n  {\n    \"original\": \"He is interested for learning English.\",\n    \"corrected\": \"He is interested in learning English.\",\n    \"error_type\": \"介词误用\",\n    \"explanation\": \"形容词'interested'需与介词'in'搭配，表示对某事物的兴趣。\"\n  },\n  {\n    \"original\": \"We are familiar to this area.\",\n    \"corrected\": \"We are familiar with this area.\",\n    \"error_type\": \"形容词搭配错误\",\n    \"explanation\": \"当表示'熟悉某物'时，'familiar'需与介词'with'搭配。'be familiar to'用于'某物为某人所熟知'的结构（如：The song is familiar to me）。\"\n  },\n  {\n    \"original\": \"If I will have time, I will visit you.\",\n    \"corrected\": \"If I have time, I will visit you.\",\n    \"error_type\": \"条件句语法错误\",\n    \"explanation\": \"第一条件句中，if从句需用一般现在时表将来，主句用将来时。'will'只能出现在主句中。\"\n  },\n  {\n    \"original\": \"If I was you, I would accept the offer.\",\n    \"corrected\": \"If I were you, I would accept the offer.\",\n    \"error_type\": \"虚拟语气错误\",\n    \"explanation\": \"第二条件句的if从句需用过去式'were'（无论主语是什么人称），表示与现在事实相反的假设。\"\n  },\n  {\n    \"original\": \"If it rains tomorrow, we would stay at home.\",\n    \"corrected\": \"If it rains tomorrow, we will stay at home.\",\n    \"error_type\": \"时态不一致\",\n    \"explanation\": \"第一条件句的主句应使用'will'，表示可能发生的真实情况。'would'适用于第二条件句的虚拟情境。\"\n  },\n  {\n    \"original\": \"Unless you don't hurry, you will miss the train.\",\n    \"corrected\": \"Unless you hurry, you will miss the train.\",\n    \"error_type\": \"双重否定错误\",\n    \"explanation\": \"'unless'本身已含否定意义（= if...not），因此不能再与'don't'连用，会造成逻辑矛盾。\"\n  }\n]\n```\n\n修改后的完整文本：\n```\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area.\nIf I have time, I will visit you. If I were you, I would accept the offer. If it rains tomorrow, we will stay at home. Unless you hurry, you will miss the train.\n```\n\n评分：6.5/10\n改进建议：\n1. 重点掌握形容词与介词的固定搭配（capable of, interested in, familiar with）\n2. 强化条件句分类练习：\n   - 第一条件句：if + 现在时，主句 + will\n   - 第二条件句：if + 过去时（were），主句 + would\n3. 注意否定词的使用逻辑，避免'unless'与'not'重复否定\n4. 加强动词短语记忆（如look forward to中的to是介词，不是不定式符号）",
+      "suggestions": [
+        "1. 重点掌握形容词与介词的固定搭配（capable of, interested in, familiar with）",
+        "2. 强化条件句分类练习：",
+        "- 第一条件句：if + 现在时，主句 + will"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "I'm looking forward for your reply.",
+          "corrected": "I'm looking forward to your reply.",
+          "error_type": "介词误用",
+          "explanation": "固定搭配错误。'look forward to'是正确表达，其中'to'是介词，后接名词或动名词。"
+        },
+        {
+          "original": "She is capable to do the job.",
+          "corrected": "She is capable of doing the job.",
+          "error_type": "形容词搭配错误",
+          "explanation": "形容词'capable'需与介词'of'搭配，后接动名词形式。'be capable of doing'是正确结构。"
+        },
+        {
+          "original": "He is interested for learning English.",
+          "corrected": "He is interested in learning English.",
+          "error_type": "介词误用",
+          "explanation": "形容词'interested'需与介词'in'搭配，表示对某事物的兴趣。"
+        },
+        {
+          "original": "We are familiar to this area.",
+          "corrected": "We are familiar with this area.",
+          "error_type": "形容词搭配错误",
+          "explanation": "当表示'熟悉某物'时，'familiar'需与介词'with'搭配。'be familiar to'用于'某物为某人所熟知'的结构（如：The song is familiar to me）。"
+        },
+        {
+          "original": "If I will have time, I will visit you.",
+          "corrected": "If I have time, I will visit you.",
+          "error_type": "条件句语法错误",
+          "explanation": "第一条件句中，if从句需用一般现在时表将来，主句用将来时。'will'只能出现在主句中。"
+        }
+      ],
+      "corrected_text": ""
+    },
+    "type": "word",
+    "created_at": "2026-01-24 21:32:55"
+  },
+  {
+    "id": 22,
+    "content": "fer\n4\nt\n1\nEnd\nIns\nI'm looking forward for your reply. She is capable to do the\njob. He is interested for learning English. We are familiar to this area.\nIf I will have time, I will visit you. If I was you,I would accept the\noffer.\n",
+    "result": {
+      "feedback": "```json\n[\n  {\n    \"original\": \"looking forward for\",\n    \"corrected\": \"looking forward to\",\n    \"error_type\": \"Preposition Error\",\n    \"explanation\": \"The correct phrase is 'look forward to' when expressing anticipation. Preposition 'to' is required after this phrasal verb.\"\n  },\n  {\n    \"original\": \"capable to do\",\n    \"corrected\": \"capable of doing\",\n    \"error_type\": \"Adjective Complement Error\",\n    \"explanation\": \"The adjective 'capable' requires the preposition 'of' followed by a gerund. The structure is 'capable of + verb-ing'.\"\n  },\n  {\n    \"original\": \"interested for learning\",\n    \"corrected\": \"interested in learning\",\n    \"error_type\": \"Preposition Error\",\n    \"explanation\": \"The correct preposition after 'interested' is 'in'. The structure is 'interested in + verb-ing'.\"\n  },\n  {\n    \"original\": \"familiar to\",\n    \"corrected\": \"familiar with\",\n    \"error_type\": \"Preposition Error\",\n    \"explanation\": \"When referring to knowledge of something, 'familiar' requires the preposition 'with'. 'Familiar to' is used when something is known by people (e.g., 'This song is familiar to me').\"\n  },\n  {\n    \"original\": \"If I will have time\",\n    \"corrected\": \"If I have time\",\n    \"error_type\": \"Conditional Clause Error\",\n    \"explanation\": \"In first conditional sentences, the if-clause uses present simple tense. Main clause uses future simple. Structure: If + present simple, ... will + verb.\"\n  },\n  {\n    \"original\": \"was\",\n    \"corrected\": \"were\",\n    \"error_type\": \"Subjunctive Mood Error\",\n    \"explanation\": \"In second conditional sentences describing hypothetical situations, we use past subjunctive 'were' for all subjects. Structure: If + past simple, ... would + verb.\"\n  },\n  {\n    \"original\": \"I'm looking forward for your reply. She is capable to do the\\njob. He is interested for learning English. We are familiar to this area.\\nIf I will have time, I will visit you. If I was you,I would accept the\\noffer.\",\n    \"corrected\": \"I'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer.\",\n    \"error_type\": \"Multiple Errors\",\n    \"explanation\": \"Collective correction of all identified errors including prepositions, adjective complements, and conditional structures.\"\n  }\n]\n```\n\n修改后的完整文本：\n```\nI'm looking forward to your reply. She is capable of doing the job. He is interested in learning English. We are familiar with this area. If I have time, I will visit you. If I were you, I would accept the offer.\n```\n\n评分：5/10\n改进建议：\n1. 系统学习形容词与介词的固定搭配（capable of, interested in, familiar with）\n2. 掌握条件句的时态规则：第一条件句用现在时表将来，第二条件句用过去时表假设\n3. 注意虚拟语气中be动词的特殊形式（所有主语都用were）\n4. 加强句子连贯性训练，当前文本缺乏逻辑连接词和扩展内容\n5. 练习标点规范，特别是条件状语从句后的逗号使用（If I were you, I would...）",
+      "suggestions": [
+        "1. 系统学习形容词与介词的固定搭配（capable of, interested in, familiar with）",
+        "2. 掌握条件句的时态规则：第一条件句用现在时表将来，第二条件句用过去时表假设",
+        "3. 注意虚拟语气中be动词的特殊形式（所有主语都用were）"
+      ],
+      "grammar_errors": [
+        "时态使用不当",
+        "主谓一致问题"
+      ],
+      "detailed_errors": [
+        {
+          "original": "looking forward for",
+          "corrected": "looking forward to",
+          "error_type": "Preposition Error",
+          "explanation": "The correct phrase is 'look forward to' when expressing anticipation. Preposition 'to' is required after this phrasal verb."
+        },
+        {
+          "original": "capable to do",
+          "corrected": "capable of doing",
+          "error_type": "Adjective Complement Error",
+          "explanation": "The adjective 'capable' requires the preposition 'of' followed by a gerund. The structure is 'capable of + verb-ing'."
+        },
+        {
+          "original": "interested for learning",
+          "corrected": "interested in learning",
+          "error_type": "Preposition Error",
+          "explanation": "The correct preposition after 'interested' is 'in'. The structure is 'interested in + verb-ing'."
+        },
+        {
+          "original": "familiar to",
+          "corrected": "familiar with",
+          "error_type": "Preposition Error",
+          "explanation": "When referring to knowledge of something, 'familiar' requires the preposition 'with'. 'Familiar to' is used when something is known by people (e.g., 'This song is familiar to me')."
+        },
+        {
+          "original": "If I will have time",
+          "corrected": "If I have time",
+          "error_type": "Conditional Clause Error",
+          "explanation": "In first conditional sentences, the if-clause uses present simple tense. Main clause uses future simple. Structure: If + present simple, ... will + verb."
+        }
+      ],
+      "corrected_text": ""
+    },
+    "type": "image",
+    "created_at": "2026-01-24 21:34:37"
+  }
+]
