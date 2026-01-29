@@ -4,7 +4,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || '/api'
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 60000,
+  timeout: 30000,
   headers: {
     'Content-Type': 'application/json'
   }
@@ -12,7 +12,7 @@ const apiClient = axios.create({
 
 const fileApiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 60000
+  timeout: 30000
 })
 
 // 批改作文
