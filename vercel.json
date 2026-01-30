@@ -4,12 +4,6 @@
   "outputDirectory": "dist",
   "installCommand": "npm ci --legacy-peer-deps",
   "framework": null,
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
