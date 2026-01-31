@@ -1,4 +1,4 @@
-# 前端 Dockerfile
+# 前端 Dockerfile - Railway deployment
 FROM node:20-alpine AS builder
 
 WORKDIR /app
