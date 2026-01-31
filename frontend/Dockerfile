@@ -12,8 +12,8 @@ RUN npm ci
 # 复制源代码
 COPY . .
 
-# 构建生产版本
-RUN npx vite build
+# 构建生产版本 - 使用 node 直接运行 vite
+RUN node node_modules/vite/bin/vite.js build
 
 # 生产阶段 - 使用Nginx
 FROM nginx:alpine
