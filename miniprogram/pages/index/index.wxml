@@ -1,0 +1,78 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">AI英语作文批改</text>
+    <text class="subtitle">智能语法检查与评分</text>
+  </view>
+
+  <view class="card input-section">
+    <view class="tab-bar">
+      <view 
+        class="tab-item {{activeTab === 'text' ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-tab="text">
+        文本输入
+      </view>
+      <view 
+        class="tab-item {{activeTab === 'word' ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-tab="word">
+        Word文档
+      </view>
+      <view 
+        class="tab-item {{activeTab === 'image' ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-tab="image">
+        图片上传
+      </view>
+    </view>
+
+    <view class="tab-content">
+      <block wx:if="{{activeTab === 'text'}}">
+        <textarea 
+          class="input-area" 
+          placeholder="请输入您的英语作文..." 
+          placeholder-class="placeholder"
+          bindinput="onInputChange"
+          value="{{essayContent}}"
+          maxlength="-1">
+        </textarea>
+        <view class="word-count">{{essayCount}} 字</view>
+      </block>
+
+      <block wx:if="{{activeTab === 'word'}}">
+        <view class="upload-area" bindtap="chooseWordFile">
+          <image class="upload-icon" src="/images/doc.png" mode="aspectFit"></image>
+          <text class="upload-text">{{selectedFileName || '点击上传Word文档'}}</text>
+          <text class="upload-hint">支持.docx格式</text>
+        </view>
+      </block>
+
+      <block wx:if="{{activeTab === 'image'}}">
+        <view class="upload-area" bindtap="chooseImage">
+          <image 
+            class="preview-image" 
+            src="{{previewImage || '/images/image.png'}}" 
+            mode="aspectFit"
+            wx:if="{{previewImage || true}}">
+          </image>
+          <text class="upload-text">{{selectedFileName || '点击上传图片'}}</text>
+          <text class="upload-hint">支持.png、.jpg、.jpeg格式</text>
+        </view>
+      </block>
+    </view>
+
+    <button 
+      class="btn-primary check-btn" 
+      bindtap="checkEssay" 
+      disabled="{{isLoading || (!essayContent.trim() && !selectedFilePath)}}"
+      loading="{{isLoading}}">
+      {{isLoading ? '批改中...' : '开始批改'}}
+    </button>
+  </view>
+
+  <view class="history-entry" bindtap="goToHistory">
+    <text>查看历史记录</text>
+    <text class="arrow">></text>
+  </view>
+</view>

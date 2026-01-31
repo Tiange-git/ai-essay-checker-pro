@@ -13,7 +13,7 @@ RUN npm ci
 COPY . .
 
 # 构建生产版本
-RUN npm run build
+RUN npx vite build
 
 # 生产阶段 - 使用Nginx
 FROM nginx:alpine
@@ -26,5 +26,8 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # 暴露端口
 EXPOSE 80
+
+# 设置环境变量默认值
+ENV BACKEND_URL=http://localhost:5000
 
 CMD ["nginx", "-g", "daemon off;"]

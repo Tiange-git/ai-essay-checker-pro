@@ -1,0 +1,173 @@
+/* pages/history/history.wxss */
+.container {
+  padding: 30rpx;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding-bottom: 120rpx;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 30rpx;
+}
+
+.filter-item {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 40rpx;
+  background: #2d2d2d;
+  color: #888888;
+  font-size: 26rpx;
+  font-weight: 600;
+  border: 2rpx solid #404040;
+  transition: all 0.3s;
+}
+
+.filter-item.active {
+  background: linear-gradient(135deg, #4a90e2, #6c5ce7);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.history-item {
+  background: #2d2d2d;
+  border-radius: 20rpx;
+  border: 1rpx solid #404040;
+  padding: 24rpx;
+  transition: all 0.3s;
+}
+
+.history-item:active {
+  transform: scale(0.98);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.item-type {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  color: #888888;
+  font-size: 24rpx;
+}
+
+.type-icon {
+  font-size: 28rpx;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.item-time {
+  color: #666666;
+  font-size: 24rpx;
+}
+
+.delete-btn {
+  color: #dc3545;
+  font-size: 36rpx;
+  padding: 10rpx;
+  line-height: 1;
+}
+
+.item-content {
+  margin-bottom: 16rpx;
+}
+
+.item-content text {
+  color: #ffffff;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.item-footer {
+  border-top: 1rpx solid #404040;
+  padding-top: 16rpx;
+  margin-top: 16rpx;
+}
+
+.score {
+  color: #28a745;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 150rpx 30rpx;
+}
+
+.empty-icon {
+  font-size: 120rpx;
+  margin-bottom: 30rpx;
+}
+
+.empty-text {
+  color: #888888;
+  font-size: 28rpx;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx;
+}
+
+.loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid #404040;
+  border-top-color: #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20rpx;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading text {
+  color: #888888;
+  font-size: 28rpx;
+}
+
+.footer-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx;
+  background: linear-gradient(180deg, transparent, #1a1a1a 30%);
+}
+
+.clear-btn {
+  background: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 24rpx 48rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}

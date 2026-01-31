@@ -1,0 +1,77 @@
+<!--pages/result/result.wxml-->
+<view class="container">
+  <view class="card result-section" wx:if="{{result}}">
+    <view class="section-header">
+      <text class="section-title">批改结果</text>
+    </view>
+
+    <view class="feedback-section">
+      <text class="feedback-title">详细反馈</text>
+      <view class="feedback-content">
+        <text>{{result.feedback || '暂无反馈'}}</text>
+      </view>
+    </view>
+
+    <view class="suggestions-section" wx:if="{{suggestions.length > 0}}">
+      <text class="suggestions-title">改进建议</text>
+      <view class="suggestions-list">
+        <view 
+          class="suggestion-item" 
+          wx:for="{{suggestions}}" 
+          wx:key="index"
+          wx:if="{{item.indexOf('评分') === -1 && item.indexOf('改进建议') === -1}}">
+          <text class="suggestion-index">{{index + 1}}.</text>
+          <text class="suggestion-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="errors-section" wx:if="{{parsedErrors.length > 0}}">
+      <text class="errors-title">错误对比</text>
+      <view class="errors-list">
+        <view 
+          class="error-item" 
+          wx:for="{{parsedErrors}}" 
+          wx:key="index"
+          bindtap="toggleError"
+          data-index="{{index}}">
+          <view class="error-header">
+            <text class="error-type">{{item.error_type || '语法错误'}}</text>
+            <text class="error-toggle">{{expandedErrors[index] ? '▼' : '▶'}}</text>
+          </view>
+          <view class="error-content" wx:if="{{expandedErrors[index]}}">
+            <view class="error-row">
+              <text class="error-label">错误:</text>
+              <text class="error-original">{{item.original}}</text>
+            </view>
+            <view class="error-row">
+              <text class="error-label">修改:</text>
+              <text class="error-corrected">{{item.corrected}}</text>
+            </view>
+            <view class="error-explanation">
+              <text class="error-label">解释:</text>
+              <text class="error-text">{{item.explanation}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="corrected-section">
+      <text class="corrected-title">修改后的完整文本</text>
+      <view class="corrected-content">
+        <text>{{result.corrected_text || '暂无修改后的文本'}}</text>
+      </view>
+    </view>
+
+    <view class="actions">
+      <button class="btn-primary" bindtap="copyResult">复制结果</button>
+      <button class="btn-secondary" bindtap="checkAgain">重新批改</button>
+    </view>
+  </view>
+
+  <view class="loading" wx:if="{{!result}}">
+    <view class="loading-spinner"></view>
+    <text>加载中...</text>
+  </view>
+</view>

@@ -1,0 +1,69 @@
+<!--pages/history/history.wxml-->
+<view class="container">
+  <view class="filter-bar">
+    <view 
+      class="filter-item {{currentFilter === 'all' ? 'active' : ''}}" 
+      bindtap="changeFilter" 
+      data-filter="all">
+      全部
+    </view>
+    <view 
+      class="filter-item {{currentFilter === 'today' ? 'active' : ''}}" 
+      bindtap="changeFilter" 
+      data-filter="today">
+      今天
+    </view>
+    <view 
+      class="filter-item {{currentFilter === '3days' ? 'active' : ''}}" 
+      bindtap="changeFilter" 
+      data-filter="3days">
+      3天
+    </view>
+    <view 
+      class="filter-item {{currentFilter === 'week' ? 'active' : ''}}" 
+      bindtap="changeFilter" 
+      data-filter="week">
+      一周
+    </view>
+  </view>
+
+  <view class="history-list" wx:if="{{history.length > 0}}">
+    <view 
+      class="history-item" 
+      wx:for="{{history}}" 
+      wx:key="id"
+      bindtap="selectItem"
+      data-item="{{item}}">
+      <view class="item-header">
+        <view class="item-type">
+          <text class="type-icon">{{item.type === 'text' ? '📝' : item.type === 'word' ? '📄' : '🖼️'}}</text>
+          <text>{{item.type === 'text' ? '文本' : item.type === 'word' ? 'Word' : '图片'}}</text>
+        </view>
+        <view class="item-actions">
+          <text class="item-time">{{formatTime(item.created_at)}}</text>
+          <text class="delete-btn" catchtap="deleteItem" data-id="{{item.id}}">×</text>
+        </view>
+      </view>
+      <view class="item-content">
+        <text>{{truncateContent(item.content)}}</text>
+      </view>
+      <view class="item-footer" wx:if="{{item.result && item.result.score}}">
+        <text class="score">评分: {{item.result.score}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty-state" wx:if="{{history.length === 0 && !loading}}">
+    <text class="empty-icon">📝</text>
+    <text class="empty-text">暂无历史记录</text>
+  </view>
+
+  <view class="loading" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text>加载中...</text>
+  </view>
+
+  <view class="footer-actions" wx:if="{{history.length > 0}}">
+    <button class="clear-btn" bindtap="clearHistory" loading="{{clearing}}">清空历史</button>
+  </view>
+</view>

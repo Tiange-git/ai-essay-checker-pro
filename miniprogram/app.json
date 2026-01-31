@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/result/result",
+    "pages/history/history"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1a1a1a",
+    "navigationBarTitleText": "AI英语作文批改",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#2d2d2d"
+  },
+  "tabBar": {
+    "color": "#888888",
+    "selectedColor": "#4a90e2",
+    "backgroundColor": "#2d2d2d",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "批改",
+        "iconPath": "images/edit.png",
+        "selectedIconPath": "images/edit_active.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "images/history.png",
+        "selectedIconPath": "images/history_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
