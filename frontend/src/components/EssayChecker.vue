@@ -71,6 +71,7 @@
                 </div>
               </label>
             </div>
+          </div>
           
           <!-- 图片上传界面 -->
           <div v-show="activeTab === 'image'" class="tab-content animate-fade">
