@@ -267,7 +267,33 @@ export default {
         selectedHistoryId.value = null
       } catch (error) {
         console.error('批改失败:', error)
-        alert('批改失败，请稍后重试')
+        
+        // 显示详细的错误信息
+        let errorMessage = '批改失败，请稍后重试'
+        
+        if (error.response) {
+          // 服务器响应了错误状态码
+          const status = error.response.status
+          const data = error.response.data
+          
+          if (status === 400) {
+            errorMessage = data.error || '请求参数错误，请检查输入内容'
+          } else if (status === 500) {
+            errorMessage = data.error || '服务器内部错误，请稍后重试'
+          } else if (status === 404) {
+            errorMessage = 'API接口不存在'
+          } else {
+            errorMessage = `请求失败 (${status}): ${data.error || '未知错误'}`
+          }
+        } else if (error.request) {
+          // 请求已发送但没有收到响应
+          errorMessage = '网络连接失败，请检查网络或稍后重试'
+        } else {
+          // 请求配置出错
+          errorMessage = `请求配置错误: ${error.message}`
+        }
+        
+        alert(errorMessage)
       } finally {
         isLoading.value = false
         uploadProgress.value = 0
