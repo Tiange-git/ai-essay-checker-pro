@@ -24,10 +24,17 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # 复制Nginx配置
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# 复制启动脚本
+COPY entrypoint.sh /entrypoint.sh
+
+# 设置脚本执行权限
+RUN chmod +x /entrypoint.sh
+
 # 暴露端口
 EXPOSE 80
 
 # 设置环境变量默认值
 ENV BACKEND_URL=http://localhost:5000
 
-CMD ["nginx", "-g", "daemon off;"]
+# 使用启动脚本
+ENTRYPOINT ["/entrypoint.sh"]
