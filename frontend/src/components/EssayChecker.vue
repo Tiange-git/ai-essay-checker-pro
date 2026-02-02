@@ -38,6 +38,7 @@
           <!-- 文本输入界面 -->
           <div v-show="activeTab === 'text'" class="tab-content animate-fade">
             <textarea
+              id="essay-input"
               v-model="essayContent"
               placeholder="请输入您的英语作文..."
               rows="10"
@@ -54,6 +55,7 @@
                      @dragleave.prevent="isDragover = false"
                      @drop.prevent="handleDrop">
                 <input 
+                  id="word-file-input"
                   type="file" 
                   accept=".docx" 
                   @change="handleFileUpload"
@@ -69,7 +71,6 @@
                 </div>
               </label>
             </div>
-          </div>
           
           <!-- 图片上传界面 -->
           <div v-show="activeTab === 'image'" class="tab-content animate-fade">
@@ -79,6 +80,7 @@
                      @dragleave.prevent="isDragover = false"
                      @drop.prevent="handleDrop">
                 <input 
+                  id="image-file-input"
                   type="file" 
                   accept="image/*"
                   @change="handleFileUpload"
