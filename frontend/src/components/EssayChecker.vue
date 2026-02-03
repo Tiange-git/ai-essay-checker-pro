@@ -369,8 +369,6 @@ export default {
           result.value.corrected_text = essayContent.value || uploadedContent.value || '暂无修改后的文本'
         }
         
-        // 如果没有找到任何错误信息，设置为空数组
-        parsedErrors.value = []
       } catch (error) {
         console.error('解析错误信息失败:', error)
         parsedErrors.value = []
