@@ -145,7 +145,7 @@ class FileProcessor:
             logger.info(f'图片base64长度: {len(image_base64)} 字符')
             
             # 发送POST请求（参考demo.py：使用data=json.dumps()，增加超时时间）
-            response = requests.post(auth_url, data=json.dumps(data), headers=headers, timeout=60)
+            response = requests.post(auth_url, data=json.dumps(data), headers=headers, timeout=120)
 
             # 7. 解析响应（参考demo.py的get_result函数）
             logger.info(f'响应状态码: {response.status_code}')

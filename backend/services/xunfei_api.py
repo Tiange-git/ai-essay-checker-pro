@@ -73,7 +73,7 @@ class XunfeiAPI:
         """发送消息到WebSocket"""
         ws.send(json.dumps(message))
     
-    def _receive_message(self, ws, timeout=30):
+    def _receive_message(self, ws, timeout=120):
         """从WebSocket接收消息"""
         start_time = time.time()
         while time.time() - start_time < timeout:
