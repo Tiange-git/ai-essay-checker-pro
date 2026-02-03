@@ -408,12 +408,15 @@ class XunfeiAPI:
         import re
         
         logger.info('开始提取修改后的文本')
+        logger.info(f'响应内容前500字符: {response[:500]}...')
+        logger.info(f'响应内容后500字符: {response[-500:] if len(response) > 500 else response}...')
         
         # 尝试匹配修改后的文本（中文格式）
         # 匹配"修改后的文本"或"修改后的完整文本"
         corrected_match = re.search(r'修改后的(?:完整)?文本[:：]\s*([\s\S]*?)(?=\d+\.|详细错误分析|评分|改进建议|$)', response)
         if corrected_match:
             corrected_text = corrected_match.group(1).strip()
+            logger.info(f'匹配到"修改后的文本"，内容长度: {len(corrected_text)}')
             if corrected_text:
                 # 去除可能的Markdown格式标签
                 corrected_text = re.sub(r'```json\s*([\s\S]*?)\s*```', '', corrected_text)
@@ -427,6 +430,7 @@ class XunfeiAPI:
         other_match = re.search(r'修正后[:：]\s*([\s\S]*?)(?=\n\n|评分|改进建议|$)', response)
         if other_match:
             corrected_text = other_match.group(1).strip()
+            logger.info(f'匹配到"修正后"，内容长度: {len(corrected_text)}')
             if corrected_text:
                 # 去除可能的Markdown格式标签
                 corrected_text = re.sub(r'```json\s*([\s\S]*?)\s*```', '', corrected_text)
@@ -441,15 +445,17 @@ class XunfeiAPI:
         if json_block_match:
             try:
                 json_content = json.loads(json_block_match.group(1))
+                logger.info(f'JSON内容键: {json_content.keys() if isinstance(json_content, dict) else "N/A"}')
                 if isinstance(json_content, dict) and 'corrected_text' in json_content:
                     corrected_text = json_content['corrected_text']
                     if corrected_text:
                         logger.info(f'成功从JSON中提取corrected_text，长度: {len(corrected_text)}')
                         return corrected_text
-            except json.JSONDecodeError:
-                pass
+            except json.JSONDecodeError as e:
+                logger.warning(f'JSON解析失败: {e}')
         
         # 如果没有找到修改后的文本，返回空字符串
         logger.warning('未能从响应中提取修改后的文本')
+        logger.warning(f'完整响应内容: {response}')
         return ''  # 返回空字符串而不是响应的一部分
 
