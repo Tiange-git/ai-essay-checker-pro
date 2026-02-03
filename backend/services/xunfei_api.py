@@ -332,10 +332,10 @@ class XunfeiAPI:
         logger.info(f'开始提取详细错误信息，响应长度: {len(response)}')
         
         # 尝试匹配JSON格式的详细错误信息
-        json_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
-        if json_match:
+        json_block_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
+        if json_block_match:
             try:
-                json_content = json.loads(json_match.group(1))
+                json_content = json.loads(json_block_match.group(1))
                 # 检查JSON结构，处理不同格式
                 if isinstance(json_content, list):
                     # 直接是错误列表
@@ -439,11 +439,11 @@ class XunfeiAPI:
                     return corrected_text
         
         # 尝试从JSON中提取corrected_text字段
-        json_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
-        if json_match:
+        json_block_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
+        if json_block_match:
             try:
                 import json
-                json_content = json.loads(json_match.group(1))
+                json_content = json.loads(json_block_match.group(1))
                 if isinstance(json_content, dict) and 'corrected_text' in json_content:
                     corrected_text = json_content['corrected_text']
                     if corrected_text:
