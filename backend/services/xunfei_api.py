@@ -255,7 +255,6 @@ class XunfeiAPI:
         
         # 尝试解析JSON格式的响应
         try:
-            import json
             json_block_match = re.search(r'```json\s*([\s\S]*?)\s*```', full_response)
             if json_block_match:
                 json_str = json_block_match.group(1)
@@ -327,7 +326,6 @@ class XunfeiAPI:
         """从响应中提取详细的错误信息"""
         # 尝试从响应中提取详细错误信息
         import re
-        import json
         
         logger.info(f'开始提取详细错误信息，响应长度: {len(response)}')
         
@@ -442,7 +440,6 @@ class XunfeiAPI:
         json_block_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
         if json_block_match:
             try:
-                import json
                 json_content = json.loads(json_block_match.group(1))
                 if isinstance(json_content, dict) and 'corrected_text' in json_content:
                     corrected_text = json_content['corrected_text']
