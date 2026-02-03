@@ -25,7 +25,7 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 
 # 配置CORS
 frontend_url = os.getenv('FRONTEND_URL', '*')
-CORS(app, resources={r"/*": {"origins": frontend_url}})
+CORS(app, resources={r"/api/*": {"origins": frontend_url, "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["Content-Type", "Authorization"]}})
 
 # 导入路由
 from routes.essay_routes import essay_routes
