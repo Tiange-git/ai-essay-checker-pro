@@ -258,8 +258,13 @@ class XunfeiAPI:
             import json
             json_match = re.search(r'```json\s*([\s\S]*?)\s*```', full_response)
             if json_match:
-                json_content = json.loads(json_match.group(1))
-                logger.info(f'成功解析JSON响应: {json.dumps(json_content, ensure_ascii=False)[:200]}...')
+                json_str = json_match.group(1)
+                logger.info(f'找到JSON块，长度: {len(json_str)}')
+                logger.info(f'JSON内容前200字符: {json_str[:200]}...')
+                
+                json_content = json.loads(json_str)
+                logger.info(f'成功解析JSON响应，类型: {type(json_content)}')
+                logger.info(f'JSON键: {json_content.keys() if isinstance(json_content, dict) else "N/A"}')
                 
                 # 检查是否包含errors字段
                 if isinstance(json_content, dict) and 'errors' in json_content:
@@ -270,8 +275,12 @@ class XunfeiAPI:
                         'detailed_errors': json_content.get('errors', []),
                         'corrected_text': json_content.get('corrected_text', '')
                     }
-                    logger.info(f'从JSON中提取结果成功')
+                    logger.info(f'从JSON中提取结果成功: errors={len(result["detailed_errors"])}, suggestions={len(result["suggestions"])}, corrected_text长度={len(result["corrected_text"])}')
                     return result
+                else:
+                    logger.warning(f'JSON中不包含errors字段，使用文本解析方式')
+            else:
+                logger.warning(f'未找到JSON块，使用文本解析方式')
         except Exception as e:
             logger.warning(f'JSON解析失败: {str(e)}，使用文本解析方式')
         
@@ -283,7 +292,7 @@ class XunfeiAPI:
             'detailed_errors': self._extract_detailed_errors(full_response),
             'corrected_text': self._generate_corrected_text(full_response)
         }
-        
+        logger.info(f'使用文本解析方式提取结果: feedback长度={len(result["feedback"])}, suggestions={len(result["suggestions"])}, grammar_errors={len(result["grammar_errors"])}, detailed_errors={len(result["detailed_errors"])}, corrected_text长度={len(result["corrected_text"])}')
         return result
     
 
