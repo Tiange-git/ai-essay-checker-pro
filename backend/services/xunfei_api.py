@@ -256,9 +256,9 @@ class XunfeiAPI:
         # 尝试解析JSON格式的响应
         try:
             import json
-            json_match = re.search(r'```json\s*([\s\S]*?)\s*```', full_response)
-            if json_match:
-                json_str = json_match.group(1)
+            json_block_match = re.search(r'```json\s*([\s\S]*?)\s*```', full_response)
+            if json_block_match:
+                json_str = json_block_match.group(1)
                 logger.info(f'找到JSON块，长度: {len(json_str)}')
                 logger.info(f'JSON内容前200字符: {json_str[:200]}...')
                 
