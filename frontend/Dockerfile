@@ -13,6 +13,8 @@ RUN npm ci
 COPY . .
 
 # 构建生产版本
+ARG VITE_API_URL
+ENV VITE_API_URL=${VITE_API_URL}
 RUN node node_modules/vite/bin/vite.js build
 
 # 生产阶段 - 使用Nginx
