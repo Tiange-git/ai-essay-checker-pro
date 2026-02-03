@@ -253,6 +253,28 @@ class XunfeiAPI:
         logger.info(f'最终响应文本长度: {len(full_response)}')
         logger.info(f'最终响应文本: "{full_response[:200]}..."')
         
+        # 尝试解析JSON格式的响应
+        try:
+            import json
+            json_match = re.search(r'```json\s*([\s\S]*?)\s*```', full_response)
+            if json_match:
+                json_content = json.loads(json_match.group(1))
+                logger.info(f'成功解析JSON响应: {json.dumps(json_content, ensure_ascii=False)[:200]}...')
+                
+                # 检查是否包含errors字段
+                if isinstance(json_content, dict) and 'errors' in json_content:
+                    result = {
+                        'feedback': '',
+                        'suggestions': json_content.get('improvement_suggestions', []),
+                        'grammar_errors': [],
+                        'detailed_errors': json_content.get('errors', []),
+                        'corrected_text': json_content.get('corrected_text', '')
+                    }
+                    logger.info(f'从JSON中提取结果成功')
+                    return result
+        except Exception as e:
+            logger.warning(f'JSON解析失败: {str(e)}，使用文本解析方式')
+        
         # 构建结果（移除评分模块）
         result = {
             'feedback': full_response,
@@ -382,9 +404,9 @@ class XunfeiAPI:
         
         # 尝试匹配修改后的文本（中文格式）
         # 匹配"修改后的文本"或"修改后的完整文本"
-        corrected_match = re.search(r'修改后的(完整)?文本[:：]\s*([\s\S]*?)(?=\d+\.|详细错误分析|评分|改进建议|$)', response)
+        corrected_match = re.search(r'修改后的(?:完整)?文本[:：]\s*([\s\S]*?)(?=\d+\.|详细错误分析|评分|改进建议|$)', response)
         if corrected_match:
-            corrected_text = corrected_match.group(2).strip()
+            corrected_text = corrected_match.group(1).strip()
             if corrected_text:
                 # 去除可能的Markdown格式标签
                 corrected_text = re.sub(r'```json\s*([\s\S]*?)\s*```', '', corrected_text)
